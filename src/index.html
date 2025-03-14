@@ -5,23 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    
 </head>
 
-<body class="font-[Poppins] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-screen">
+<body class="font-[Poppins] bg-white h-screen">
     <header class="bg-white">
-        <nav class="flex justify-between items-center w-[92%]  mx-auto">
+        <nav class="flex justify-between items-center w-[92%] mx-auto">
             <div>
-                <img class="w-16 cursor-pointer" src="https://cdn-icons-png.flaticon.com/512/5968/5968204.png" alt="...">
-            </div>
+                <img src="/images/navbar.png" alt="">
+            </div>    
             <div
-                class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
-                <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+                class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5 justify-center">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 text-[#7a1215]">
                     <li>
                         <a class="hover:text-gray-500" href="#">Products</a>
                     </li>
@@ -39,68 +41,174 @@
                     </li>
                 </ul>
             </div>
-            <div class="flex items-center gap-6">
-                <button class="bg-[#a6c1ee] text-white px-5 py-2 rounded-2xl hover:bg-[#87acec] " onclick="rochelle()">Click here, Rochelle</button>
-                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
-            </div>
+            
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none ml-auto"> 
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> 
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path> 
+                </svg> 
+            </button> 
+        </nav>
     </header>
-    <h1 class="text-9xl px-10 text-blue-950 mx-3.5">Rochelle's website</h1>
-    <form class="mr-auto">
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname"><br><br>
-        
-        <button class="bg-[#a6c1ee] text-white px-5 py-2 rounded-2xl hover:bg-[#87acec] " onclick="confirmRochelle()">Click here, Rochelle</button>
-        <!-- <input type="submit" value="Submit"> -->
-      </form>
-
-
-      bg-gradient-to-t
-      <div>
-        <h1 id="print" onclick="rochelle()"></h1>
-      </div>
-
-
-
-      
-      <button id="displayButton">Click Me!</button>
-    <p id="message"></p>
-
-    <script>
-        // Function to display the message
-        function displayMessage() {
-            document.getElementById("message").innerHTML = "Hello, World! You clicked the button!";
-        }
-
-        // Adding event listener to the button
-        document.getElementById("displayButton").addEventListener("click", displayMessage);
-    </script>
-
-
-
-    <script>
-        const navLinks = document.querySelector('.nav-links')
-        function onToggleMenu(e){
-            e.name = e.name === 'menu' ? 'close' : 'menu'
-            navLinks.classList.toggle('top-[9%]')
-        }
-    </script>
     
-    <script>
-    function rochelle() {
-        alert("are you rochelle?");
-    }
-    function confirmRochelle() {
-        fname = document.getElementById("fname").value; // Corrected line
-        if (fname === "Rochelle") { // Corrected line
-            message ="You are Rochelle";
-        } else {
-            message ="Go away!";
-        }
-        document.getElementById("print").innerHTML = message; // Display the message in the HTML
-    }
-    </script>
+    <section class="">
+        <div class="bg-[#7a1215] w-2xl rounded-bl-lg px-4 h-20 flex items-center justify-center">
+            <h1 class="text-white text-center text-2xl mt-1.5 ">Employers</h1>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2  gap-10 pt-4 m-7 ">
+            <div>
+                <h2 class="font-bold">I. Business details</h2>
+                <form action="">
+                    <input placeholder="Business Name: " class="w-full border border-black rounded pt-2"type="text" id="bus_name" name="fname"><br><br>
+                    
+                    <input placeholder="Business Address: " class="w-full border border-black rounded pt-2"type="text" id="address" name="address"><br><br>
+                    
+                    <input placeholder="Business License No.:" class="w-full border border-black rounded pt-2"type="text" id="license_no" name="license"><br><br>
+                    
+                    <input placeholder="Nature of Business: " class="w-full border border-black rounded pt-2 "type="text" id="nature" name="nature"><br><br>
+                </form>
+            </div>
+            
+            <div>
+                <h2 class="font-bold">II. Contact Information</h2>
+                <form action="">
+                    <input placeholder="Contact Person:" class="w-full border border-black rounded pt-2 "type="text" id="contact_person" name="conperson"><br><br>
+                
+                    <input placeholder="Position" class="w-full border border-black rounded pt-2 "type="text" id="position" name="position"><br><br>
+                    
+                    <input placeholder="Tel No.:" class="w-full border border-black rounded pt-2"type="text" id="telno" name="telno"><br><br>
+                    
+                    <input placeholder="Email Address" class="w-full border border-black rounded pt-2"type="text" id="email" name="email"><br><br>
+                </form>
+            </div>
+        </div>
+        
+
+        <section class="m-7 "> 
+            <h3 id="open-modal" class="text-red-800 font-semibold underline cursor-pointer">+ Add More</h3> 
+        </section> 
+        
+       <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"> 
+            <div class="bg-white p-6 rounded-lg shadow-lg w-1/3"> 
+                <h2 class="text-xl font-bold mb-4">Add More Information</h2> 
+                <p>Add files</p> 
+                <button id="close-modal" class="mt-4 bg-red-600 text-white px-4 py-2 rounded">Close</button> 
+            </div> 
+        </div> 
+        <script>
+            function openModal() {
+                document.getElementById('modal').classList.remove('hidden'); 
+            }
+            function closeModal() {
+                document.getElementById('modal').classList.add('hidden'); 
+            }
+    
+            document.getElementById('open-modal').addEventListener('click', openModal);
+        
+            document.getElementById('close-modal').addEventListener('click', closeModal);
+        </script>
+
+        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="bg-[#7a1215] text-white px-7 h-10 m-7 rounded-e-xs " type= "button"> Submit </button>
+        
+
+        <div id="submit-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+                <h2 class="text-xl font-bold mb-4">Application submitted successfully!</h2>
+                <p>Your information has been received successfully.</p>
+                <button id="close-modal" class="mt-4 bg-red-600 text-white px-4 py-2 rounded" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+        
+        <script>
+            function confirmSubmit() {
+                document.getElementById('submit-modal').classList.remove('hidden');
+            }
+        
+            function closeModal() {
+                document.getElementById('submit-modal').classList.add('hidden');
+            }
+        </script>
+
+  <!-- Main modal -->
+  <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div class="relative p-4 w-full max-w-md max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+              <!-- Modal header -->
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                      Fields
+                  </h3>
+                  <button type="button" class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
+                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>
+              <!-- Modal body -->
+              <div class="p-4 md:p-5">
+                  <form class="space-y-4" action="#">
+                      <div>
+                        
+                          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Positions</label>
+                          <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Manager" required />
+                      </div>
+                      <div>
+                          <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No. Required</label>
+                          <input type="password" name="password" id="password" placeholder="032126574521" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                      </div>
+                      <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job Description</label>
+                        <input type="password" name="password" id="password" placeholder="Manages the opearation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Salary Range</label>
+                        <input type="password" name="password" id="password" placeholder="6 digits" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                    </div>
+                    
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Employment type</label>
+                        <input type="password" name="password" id="password" placeholder="(Full-time/ Part-time/ Contract)" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Work Location</label>
+                        <input type="password" name="password" id="password" placeholder="(Full-time/ Part-time/ Contract)" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                    </div>
+
+                      <div class="flex justify-between">
+                          <div class="flex items-start">
+                              
+                              
+                          </div>
+                          
+                      </div>
+                      <button type="submit" class="w-full text-whitefocus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-[#7a1215] text-white">Save</button>
+                      
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div> 
+
+    </section>
+
+    <footer class="bg-[#380607] flex">
+        <!-- <p class="text-left">Copyright</p> -->
+        <img src="/images/footer.png" alt="">
+    </footer>
    
 
+    
+
+
+
+
+
+    <script> 
+        document.getElementById('menu-toggle').addEventListener('click', function() { 
+            document.getElementById('menu').classList.toggle('hidden'); 
+        }); 
+    </script> 
     
 </body>
 
